@@ -6,7 +6,7 @@ Public Class AccesoDatosSQL
     Private Shared comando As New SqlCommand
     Public Shared Function Conectar() As String
         Try
-            conexion.ConnectionString = "Server=tcp:hads25.database.windows.net,1433;Initial Catalog=HADS25-TAREAS;Persist Security Info=False;User ID=amaiajokin@hads25;Password=Nistus8000;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+            conexion.ConnectionString = "Server=tcp:hads25.database.windows.net,1433;Initial Catalog=HADS25-TAREAS;Persist Security Info=False;User ID=amaiajokin@hads25;Password=;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
             conexion.Open()
         Catch ex As Exception
             Return "ERROR DE CONEXIÓN: " + ex.Message
@@ -70,7 +70,7 @@ Public Class AccesoDatosSQL
             'Direccion de destino
             Dim to_address As New MailAddress(email)
             'Password de la cuenta
-            Dim from_pass As String = "8jOdAcO9"
+            Dim from_pass As String = ""
             'Objeto para el cliente smtp
             Dim smtp As New SmtpClient
             'Host en este caso el servidor de gmail
